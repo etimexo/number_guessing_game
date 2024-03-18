@@ -7,16 +7,23 @@ def guessing():
     lower = int(input("Enter your lower limit: "))
     upper = int(input("Enter your upper limit: "))
     rand = r.randint(lower, upper)
+    guesses = 0
     
     while True:
+        
         guess = int(input("Guess the number! ")) 
+        guesses += 1
         if guess > rand:
-            print("You guessed too high!")
+            print("That's high. Bring it down a little.")
+            # guesses += 1
+            # print(guesses += 1)
         elif guess < rand:
-            print("You guessed too low!")
+            print("You're close. Go a bit higher.'")
+            # guesses += 1
         else:
-            print("You got it!!")
+            # guesses += 1
+            print("You got it in {} guesses!!".format(guesses))
             play = input("would you like to play again? (y/n) ")
-            if play != 'y':
+            if play.lower() != 'y':
                 break
 guessing()
